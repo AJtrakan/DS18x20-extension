@@ -3,7 +3,7 @@
     description: "DS18x20 temperature sensor",
     author: "AJ.TAY",
     category: "Sensors",
-    version: "1.0.0",
+    version: "1.0.1",
     icon: "/static/icon.png", // Category icon
     color: "#0f3058", // Category color (recommend some blocks color)
     blocks: [ // Blocks in Category
