@@ -40,13 +40,13 @@ class DS18X20:
         buf = self.read_scratch(rom)
         if rom[0] == 0x10:
             if buf[1]:
-                t = buf[0] >> 1 | 0x80
-                t = -((~t + 1) & 0xFF)
+                t1_ds_sensor = buf[0] >> 1 | 0x80
+                t1_ds_sensor = -((~t1_ds_sensor + 1) & 0xFF)
             else:
-                t = buf[0] >> 1
-            return t - 0.25 + (buf[7] - buf[6]) / buf[7]
+                t1_ds_sensor = buf[0] >> 1
+            return t1_ds_sensor - 0.25 + (buf[7] - buf[6]) / buf[7]
         else:
-            t = buf[1] << 8 | buf[0]
-            if t & 0x8000:  # sign bit set
-                t = -((t ^ 0xFFFF) + 1)
-            return t / 16
+            t1_ds_sensor = buf[1] << 8 | buf[0]
+            if t1_ds_sensor & 0x8000:  # sign bit set
+                t1_ds_sensor = -((t1_ds_sensor ^ 0xFFFF) + 1)
+            return t1_ds_sensor / 16

@@ -27,8 +27,8 @@ Blockly.Python['ds_Delay'] = function(block) {
 };
 
 Blockly.Python['ds_sensor_read_temp'] = function (block) {
-  Blockly.Python.definitions_['import_temp'] = 'import Temp';
+  Blockly.Python.definitions_['import_temp'] = 'import Temp_ds_sensor';
 
-  var code = 'Temp.read_temp(ds_sensor)';
+  var code = 'Temp_ds_sensor.read_temp(ds_sensor)';
   return [code, Blockly.Python.ORDER_NONE];
 };
